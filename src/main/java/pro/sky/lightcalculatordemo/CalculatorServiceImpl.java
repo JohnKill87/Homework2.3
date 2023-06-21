@@ -4,30 +4,45 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-    public String calculator() {
-        return "Добро пожаловать";
-    }
 
     public String answerCalculator() {
         return "Добро пожаловать в калькулятор";
     }
-    public String Addition(int userNumber1, int userNumber2) {
-        int userNumber3 = userNumber1 + userNumber2;
-        return userNumber1 + " + " + userNumber2 + " = " + userNumber3;
+    public String Addition(Integer userNumber1, Integer userNumber2) {
+        if (userNumber1 != null || userNumber2 != null) {
+            int userNumber3 = userNumber1 + userNumber2;
+            return userNumber1 + " + " + userNumber2 + " = " + userNumber3;
+        } else {
+            return "Ошибка";
+        }
     }
 
-    public String subtraction(int userNumber1, int userNumber2) {
-        int userNumber3 = userNumber1 - userNumber2;
-        return userNumber1 + " + " + userNumber2 + " = " + userNumber3;
+    public String subtraction(Integer userNumber1, Integer userNumber2) {
+        if (userNumber1 != null || userNumber2 != null) {
+            int userNumber3 = userNumber1 - userNumber2;
+            return userNumber1 + " - " + userNumber2 + " = " + userNumber3;
+        } else {
+            return "Ошибка";
+        }
     }
 
-    public String multiplication(int userNumber1, int userNumber2) {
-        int userNumber3 = userNumber1 * userNumber2;
-        return userNumber1 + " + " + userNumber2 + " = " + userNumber3;
+    public String multiplication(Integer userNumber1, Integer userNumber2) {
+        if (userNumber1 != null || userNumber2 != null) {
+            int userNumber3 = userNumber1 * userNumber2;
+            return userNumber1 + " * " + userNumber2 + " = " + userNumber3;
+        } else {
+            return "Ошибка";
+        }
     }
 
-    public String division(int userNumber1, int userNumber2) {
-        int userNumber3 = userNumber1 / userNumber2;
-        return userNumber1 + " + " + userNumber2 + " = " + userNumber3;
+    public String division(Integer userNumber1, Integer userNumber2) {
+        if (userNumber2 == 0 || userNumber1 == 0) {
+            return "Ошибка: нельзя делить на 0";
+        }  if (userNumber1 != null || userNumber2 != null) {
+            int userNumber3 = userNumber1 / userNumber2;
+            return userNumber1 + " / " + userNumber2 + " = " + userNumber3;
+    } else {
+        return "Ошибка";
+        }
     }
 }
