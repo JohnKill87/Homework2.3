@@ -1,10 +1,10 @@
-package pro.sky.lightcalculatordemo;
+package pro.sky.lightcalculatordemo.services;
 
 public interface CalculatorService {
 
     String answerCalculator();
 
-    String Addition(Integer userNumber1, Integer userNumber2);
+    String addition(Integer userNumber1, Integer userNumber2);
 
     String subtraction(Integer userNumber1, Integer userNumber2);
 

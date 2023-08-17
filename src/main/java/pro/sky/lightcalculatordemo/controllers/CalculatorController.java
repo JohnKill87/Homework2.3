@@ -1,9 +1,10 @@
-package pro.sky.lightcalculatordemo;
+package pro.sky.lightcalculatordemo.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.lightcalculatordemo.services.CalculatorService;
 
 @RestController
 @RequestMapping("/calculator")
@@ -20,7 +21,7 @@ public class CalculatorController {
 
     @GetMapping(path = "/plus")
     public String Addition(@RequestParam("num1")  Integer userNumber1, @RequestParam("num2") Integer userNumber2) {
-        return calculatorService.Addition(userNumber1, userNumber2);
+        return calculatorService.addition(userNumber1, userNumber2);
     }
 
     @GetMapping(path = "/minus")
@@ -37,4 +38,5 @@ public class CalculatorController {
     public String division(@RequestParam("num1") Integer userNumber1, @RequestParam("num2") Integer userNumber2) {
         return calculatorService.division(userNumber1, userNumber2);
     }
+
 }
